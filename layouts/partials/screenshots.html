@@ -1,0 +1,53 @@
+<section class="screenshots">
+  <h2>Screenshots</h2>
+
+  <div class="screenshot-row row-left" data-facing="left">
+    <div class="screenshot image screenshot-facing-left">
+  <img class="lb-trigger" data-index="0" src="/images/screenshots/screenshot-left-1.svg" alt="Screenshot 1" />
+    </div>
+    <div class="screenshot-caption">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+    </div>
+  </div>
+
+  <div class="screenshot-row row-right" data-facing="right">
+    <div class="screenshot-caption">
+      <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor.</p>
+    </div>
+  <div class="screenshot image">
+  <img class="lb-trigger" data-index="1" src="/images/screenshots/screenshot-right.svg" alt="Screenshot 2" />
+    </div>
+  </div>
+
+  <div class="screenshot-row row-left" data-facing="left">
+    <div class="screenshot image screenshot-facing-left">
+  <img class="lb-trigger" data-index="2" src="/images/screenshots/screenshot-left-2.svg" alt="Screenshot 3" />
+    </div>
+    <div class="screenshot-caption">
+      <p>Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- Lightbox overlay -->
+<div id="screenshots-lightbox" class="screenshots-lightbox" aria-hidden="true">
+  <div class="lightbox-top">
+    <div class="lightbox-nav">
+      <button class="lightbox-prev" aria-label="Previous">&lt;</button>
+      <button class="lightbox-next" aria-label="Next">&gt;</button>
+    </div>
+    <button class="lightbox-close" aria-label="Close">✕</button>
+  </div>
+  <div class="lightbox-backdrop"></div>
+  <div class="lightbox-inner" role="dialog" aria-modal="true">
+    <img class="lightbox-image" src="" alt="" />
+  </div>
+</div>
+
+<script src="/js/screenshots-lightbox.js" defer></script>
+
+<!-- View more button placed visually at bottom-middle of the screenshots section -->
+<div class="screenshots-viewmore-wrap">
+  <button class="screenshots-viewmore" aria-label="View more screenshots">View more</button>
+</div>

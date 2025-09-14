@@ -1,0 +1,113 @@
+<section class="built-in">
+  <!--
+    Bento / built-in grid behaviour:
+    - Cards are content-sized (no forced equal heights) so each card's size matches its content.
+    - Layout is driven by CSS Grid in `style-partial-built-in.css` using a small fixed
+      `grid-auto-rows` (12px) and `grid-auto-flow: dense` so shorter cards pack into available spaces (bento-like).
+      and `grid-auto-flow: dense` so shorter cards pack into available spaces (bento-like).
+    - Avoids forcing `.built-in-card` to `height:100%` so rows can vary by content.
+    - Responsive: columns collapse to 1 column under 900px (see media query in CSS).
+  -->
+  <div class="built-in-inner">
+    <h2>Built In</h2>
+    <div class="built-in-grid">
+      <!-- New requested order: uf, uf-os, ufdot, stasys, strats, cryo, podbay, breech, mother, spock, ketbash -->
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/uf" target="_blank" rel="noopener noreferrer">uf-os/uf</a>
+  <div class="project-name">UF</div>
+        <p class="card-desc">Tool To Manage UF-OS & Friends.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/uf-os" target="_blank" rel="noopener noreferrer">uf-os/uf-os</a>
+  <div class="project-name">UF-OS</div>
+        <p class="card-desc">Everything (☝️🤓 Erm, Space) Shipped Together.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/ufdot" target="_blank" rel="noopener noreferrer">uf-os/ufdot</a>
+  <div class="project-name">UFDot</div>
+        <p class="card-desc">(Pronounced U-F-DOUGH) Is A Soft-Fork Of Godot Aimed At Helping Add Things Of Interest -- Upstreaming As-Much As Possible.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/stasys" target="_blank" rel="noopener noreferrer">uf-os/stasys</a>
+  <div class="project-name">Stasys</div>
+        <p class="card-desc">STASYS Is The Perpetual Waiting / Holder Of Godot. A Distro Based Around Godot.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/strats" target="_blank" rel="noopener noreferrer">uf-os/strats</a>
+  <div class="project-name">Strats</div>
+        <p class="card-desc">Misc Tools For Stasys; Separate Repo To Test Things Build Extensively Before Updated In-Image.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/cryo" target="_blank" rel="noopener noreferrer">uf-os/cryo</a>
+  <div class="project-name">Cryo</div>
+        <p class="card-desc">CRYO'S, Is Misc Parts Of The Underlying Operating System For STASYS; The Installer, Recovery Tool, Other Misc Utils, Etc.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/podbay" target="_blank" rel="noopener noreferrer">uf-os/podbay</a>
+  <div class="project-name">Podbay</div>
+        <p class="card-desc">"Open The Podbay Doors, Gal (Godot); A Podman Manager For Breech Styled Podman Containers.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/breech" target="_blank" rel="noopener noreferrer">uf-os/breech</a>
+  <div class="project-name">Breech</div>
+        <p class="card-desc">Container'(ment) Breach! Run A Fair Bit Of Stasys' On A Non-Bootable Container System.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/mother" target="_blank" rel="noopener noreferrer">uf-os/mother</a>
+  <div class="project-name">Mother</div>
+        <p class="card-desc">Tool To Make Shipping To UF-OS Super Easy / Modular.</p>
+        <div class="card-details">
+          <p>...</p>
+        </div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/spock" target="_blank" rel="noopener noreferrer">uf-os/spock</a>
+  <div class="project-name">Spock</div>
+        <p class="card-desc">🖖 Sprock (Script) Is A Superset Of Godot Adding Notably AST Macros, A JIT Compiler, And Native Static Binaries That Opttionally Supports Calling LibGodot.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/ketbash" target="_blank" rel="noopener noreferrer">uf-os/ketbash</a>
+  <div class="project-name">Ketbash</div>
+        <p class="card-desc">Extended Library, Utils, Etc For Sprock (Script).</p>
+        <div class="card-details"></div>
+      </div>
+
+  <div class="built-in-card">
+    <a class="repo-link" href="https://github.com/uf-os/gundwm" target="_blank" rel="noopener noreferrer">uf-os/gundwm</a>
+  <div class="project-name">Gundwm</div>
+    <p class="card-desc">Opinionated Hyprland-Config For Stasys Focused Primarily On Godot.</p>
+    <div class="card-details"></div>
+  </div>
+
+  <div class="built-in-card">
+    <a class="repo-link" href="https://github.com/uf-os/nanodots" target="_blank" rel="noopener noreferrer">uf-os/nanodots</a>
+  <div class="project-name">Nanodots</div>
+    <p class="card-desc">Little Programs In Godot; To Make Gundwm A Bit (/Byte) More Liveable.</p>
+    <div class="card-details"></div>
+  </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="/js/bento-grid.js" defer></script>

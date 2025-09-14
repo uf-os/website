@@ -1,0 +1,85 @@
+<!-- Frequently Asked Questions (FAQ) Section -->
+<section class="faq-section">
+  <div class="faq-card">
+    <div class="faq-inner">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="true">Q: Vorare semper atque lumen?</button>
+          <div class="faq-answer" style="display: block;">A: Novus lorem: vorare semper atque lumen, cursus vitae primis in faucibus. Velit aptent tempor, etiam arcu sem vivamus—nibh habitant luctus.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Q: Nimis flumine condimentum?</button>
+          <div class="faq-answer" style="display: none;">A: Lacinia novum: nimis flumine condimentum, porttitor sapien arcu, sed euismod ante. Pellentesque taciti ligula, curabitur sed.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Q: Fusce solum strenua?</button>
+          <div class="faq-answer" style="display: none;">A: Candelae fusce: solum strenua, ad arcu motus; id vestibulum neque—aliquam aenean, morbi cursus dolor sit.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+// FAQ Expand/Collapse Logic
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    answer.style.display = expanded ? 'none' : 'block';
+  });
+});
+</script>
+<style>
+.faq-section { margin: 2rem 0; }
+.faq-card {
+  background: #fff;
+  border-radius: 0; /* square corners per request */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 2rem;
+  width: 100vw; /* full viewport width */
+  box-sizing: border-box;
+  margin: 2rem 0 0 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border: 1px solid rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+.faq-card h2 {
+  color: #14532d;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.faq-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.faq-list { width: 100%; margin: 0 auto; }
+.faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+.faq-question {
+  background: #f7f7f9;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  text-align: left;
+  color: #2c2c2c;
+  border-radius: 0; /* square question buttons */
+  transition: background 0.2s;
+}
+.faq-question[aria-expanded="true"] {
+  background: #ececf1;
+}
+.faq-answer {
+  padding: 0.5rem 0 1rem 1rem;
+  color: #444;
+  font-size: 1rem;
+}
+</style>
