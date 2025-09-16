@@ -1,0 +1,91 @@
+<section class="grab-ufos" style="background: #b6ffb6; padding: 2rem 0;">
+  <h2 style="text-align:center; margin-bottom: 1.5rem; color: #222;">Grab UF-OS!</h2>
+  <div style="text-align:center; max-width:600px; margin:0 auto 2rem auto; color:#222; font-size:1.15rem;">
+  UF-OS is currently distributed as two spins: StatOS and Stasys. Each offers a unique experience tailored to different needs and philosophies.
+  </div>
+  <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom:2.5rem;">
+    <div class="grab-card" style="background: linear-gradient(to bottom, #000 0 160px, #fff 160px 100%); border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 2rem; max-width: 350px; flex: 1 1 300px; color: #222;">
+        <img src="/images/banner-statos.webp" alt="StatOS Banner" style="width:100%;border-radius:0.5rem 0.5rem 0 0;object-fit:cover;margin-bottom:1rem;" />
+        <p style="color: #222;"><strong>Status Quo:</strong> A Bazzite Superset catered to Gamedev. Ships Godot, Blender, and friends. Also ships an optional Hyprland session.</p>
+        <ul>
+          <li>Based on Bazzite</li>
+          <li>Includes Godot, Blender, and more</li>
+          <li>Optional Hyprland session</li>
+          <li>Best for game developers</li>
+        </ul>
+  <a href="#" class="grab-link" id="get-statos" style="color: #388e3c; font-weight: bold;">Get StatOS</a>
+      </div>
+    <div class="grab-card" style="background: linear-gradient(to bottom, #000 0 160px, #fff 160px 100%); border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 2rem; max-width: 350px; flex: 1 1 300px; color: #222;">
+  <img src="/images/banner-stasys.webp" alt="Stasys Banner" style="width:100%;border-radius:0.5rem 0.5rem 0 0;object-fit:cover;margin-bottom:1rem;" />
+  <p style="color: #222;"><strong>Idealistic:</strong> Ships a specialized Hyprland config and a much more minimalistic image.</p>
+        <ul>
+          <li>Specialized Hyprland config</li>
+          <li>Minimalistic image</li>
+          <li>Less pragmatic, more idealistic</li>
+          <li>Best for minimalists & tinkerers</li>
+        </ul>
+  <a href="#" class="grab-link" id="get-stasys" style="color: #388e3c; font-weight: bold;">Get Stasys</a>
+      </div>
+  </div>
+    </div>
+
+  <!-- Fedora Setup Instruction Card (Long) -->
+  <div style="margin-top:2.5rem;">
+    <div style="background: #eaffea; border: 1px solid #b6ffb6; color: #227a22; border-radius: 0.7rem; padding: 0.75rem 1.5rem; max-width: 900px; margin: 0 auto 1.5rem auto; font-size: 1.08rem; text-align: center; font-weight: 500;">
+      <span>Notice: We currently don't ship an ISO and require an existing Fedora Atomic image installed on your system.</span>
+    </div>
+  <div class="grab-card" style="background: #fff; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 2.5rem; width: 90%; max-width: 1200px; min-width: 280px; color: #222; text-align:left; margin: 0 auto; overflow-x:auto;">
+  <h3 id="setup-title" style="margin-top:0;">How to Set Up Fedora Atomic Desktop For UF-OS/StatOS</h3>
+      <ol style="font-size:1.15rem;">
+        <li style="margin-bottom:1.2rem;">
+          <strong>Download an official Fedora Atomic Desktop ISO:</strong><br>
+          <span style="font-size:0.95rem;color:#555;">Flash the ISO to a USB drive and install Fedora as usual.</span><br>
+          <span style="font-size:1rem;color:#388e3c;font-weight:600;">We recommend installing with Kinoite, but any Fedora Atomic Desktop will work.</span>
+        </li>
+        <li style="margin-bottom:1.2rem;">
+          <strong>Rebase to the unsigned variant of the Universal Blue base image:</strong><br>
+          Open a terminal and run:<br>
+          <pre id="unsigned-cmd" style="background:#f5f5f5;padding:0.75rem;border-radius:0.5rem;overflow-x:auto;white-space:pre;">rpm-ostree rebase ostree-unverified-registry:ghcr.io/uf-os/statos:latest</pre>
+          <span style="font-size:0.95rem;color:#555;">Replace <code id="unsigned-img">uf-os/statos</code> with your chosen image if different.</span><br>
+          Then reboot:<br>
+          <pre style="background:#f5f5f5;padding:0.75rem;border-radius:0.5rem;white-space:pre-wrap;word-break:break-word;">systemctl reboot</pre>
+        </li>
+        <li style="margin-bottom:1.2rem;">
+          <strong>Rebase to the signed variant of the image:</strong><br>
+          After rebooting, run:<br>
+          <pre id="signed-cmd" style="background:#f5f5f5;padding:0.75rem;border-radius:0.5rem;overflow-x:auto;white-space:pre;">rpm-ostree rebase ostree-image-signed:docker://ghcr.io/uf-os/statos:latest</pre>
+          <span style="font-size:0.95rem;color:#555;">Again, replace <code id="signed-img">uf-os/statos</code> with your chosen image if needed.</span><br>
+          Then reboot again:<br>
+          <pre style="background:#f5f5f5;padding:0.75rem;border-radius:0.5rem;white-space:pre-wrap;word-break:break-word;">systemctl reboot</pre>
+        </li>
+      </ol>
+      <div style="margin-top:1.5rem; font-size:0.95rem; color:#222; text-align:right;">
+  <em>Source: <a href="https://universal-blue.discourse.group/t/how-to-install-universal-blues-base-images/868" target="_blank" style="color:#388e3c;">Universal Blue: How to Install Base Images</a></em>
+      </div>
+      <script>
+        function updateInstructions(image) {
+          document.getElementById('unsigned-cmd').textContent = `rpm-ostree rebase ostree-unverified-registry:ghcr.io/${image}:latest`;
+          document.getElementById('unsigned-img').textContent = image;
+          document.getElementById('signed-cmd').textContent = `rpm-ostree rebase ostree-image-signed:docker://ghcr.io/${image}:latest`;
+          document.getElementById('signed-img').textContent = image;
+          var title = document.getElementById('setup-title');
+          if (image === 'uf-os/statos') {
+            title.textContent = 'How to Set Up Fedora Atomic Desktop For UF-OS/StatOS';
+          } else if (image === 'uf-os/stasys') {
+            title.textContent = 'How to Set Up Fedora Atomic Desktop For UF-OS/Stasys';
+          } else {
+            title.textContent = 'How to Set Up Fedora Atomic Desktop';
+          }
+        }
+        document.getElementById('get-statos').onclick = function(e) {
+          e.preventDefault();
+          updateInstructions('uf-os/statos');
+        };
+        document.getElementById('get-stasys').onclick = function(e) {
+          e.preventDefault();
+          updateInstructions('uf-os/stasys');
+        };
+      </script>
+    </div>
+  </div>
+</section>
